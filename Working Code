@@ -1,1 +1,31 @@
+'Electronics Calculator
+'Written For MN260
+'Johnathan Glueck,       On 11th April 2018
 
+Option Explicit On
+Option Strict On
+Option Infer Off
+
+Public Class frmMain
+
+    Private Sub btnSelect_Click(sender As Object, e As EventArgs) Handles btnSelect.Click
+        If btnTotalResistance.Checked Then
+            frmTotalResistance.Show()
+        End If
+    End Sub
+
+    Private Sub frmMain_Activated(sender As Object, e As EventArgs) Handles Me.Activated
+        frmTotalResistance.Hide()
+
+    End Sub
+End Class
+Public Class frmTotalResistance
+    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+        frmMain.Show()
+    End Sub
+
+    Private Sub frmTotalResistance_Activated(sender As Object, e As EventArgs) Handles Me.Activated
+        frmMain.Hide()
+    End Sub
+
+End Class
