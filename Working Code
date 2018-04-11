@@ -7,25 +7,67 @@ Option Strict On
 Option Infer Off
 
 Public Class frmMain
-
+    Private Sub btnExit_Click(sender As Object, e As EventArgs) Handles btnExit.Click
+        Me.Close()
+    End Sub
     Private Sub btnSelect_Click(sender As Object, e As EventArgs) Handles btnSelect.Click
         If btnTotalResistance.Checked Then
             frmTotalResistance.Show()
+        ElseIf btnVoltage.Checked Then
+            frmVoltage.Show()
+        ElseIf btnCurrent.Checked Then
+            frmCurrent.Show()
+        ElseIf btnResistance.Checked Then
+            frmResistance.Show()
+        ElseIf btnPower.Checked Then
+            frmPower.Show()
         End If
     End Sub
-
     Private Sub frmMain_Activated(sender As Object, e As EventArgs) Handles Me.Activated
         frmTotalResistance.Hide()
-
+        frmVoltage.Hide()
+        frmCurrent.Hide()
+        frmPower.Hide()
+        frmResistance.Hide()
     End Sub
 End Class
 Public Class frmTotalResistance
-    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles btnExit.Click
         frmMain.Show()
     End Sub
-
     Private Sub frmTotalResistance_Activated(sender As Object, e As EventArgs) Handles Me.Activated
         frmMain.Hide()
     End Sub
-
+End Class
+Public Class frmVoltage
+    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles btnExit.Click
+        frmMain.Show()
+    End Sub
+    Private Sub frmVoltage_Activated(sender As Object, e As EventArgs) Handles Me.Activated
+        frmMain.Hide()
+    End Sub
+End Class
+Public Class frmCurrent
+    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles btnExit.Click
+        frmMain.Show()
+    End Sub
+    Private Sub frmCurrent_Activated(sender As Object, e As EventArgs) Handles Me.Activated
+        frmMain.Hide()
+    End Sub
+End Class
+Public Class frmResistance
+    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles btnExit.Click
+        frmMain.Show()
+    End Sub
+    Private Sub frmResistance_Activated(sender As Object, e As EventArgs) Handles Me.Activated
+        frmMain.Hide()
+    End Sub
+End Class
+Public Class frmPower
+    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles btnExit.Click
+        frmMain.Show()
+    End Sub
+    Private Sub frmPower_Activated(sender As Object, e As EventArgs) Handles Me.Activated
+        frmMain.Hide()
+    End Sub
 End Class
